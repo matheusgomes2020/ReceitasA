@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ReceitasA</string>
+
+    <!-- App Menu -->
+    <string name="app_menu_home">Home</string>
+    <string name="app_menu_ingredients">Ingredients</string>
+    <string name="app_menu_favorites">Favorites</string>
+
+    <string name="recipes_screen_title">Recipes</string>
+    <string name="ingredients_screen_title">Ingredients</string>
+    <string name="favorites_screen_title">Favorites</string>
+
+
 </resources>
