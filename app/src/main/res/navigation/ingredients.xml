@@ -9,6 +9,6 @@
     <fragment
         android:id="@+id/ingredientsFragment"
         android:name="com.matheus.receitasa.presentation.ingredients.IngredientsFragment"
-        android:label="fragment_ingredients"
+        android:label="@string/ingredients_screen_title"
         tools:layout="@layout/fragment_ingredients" />
 </navigation>
