@@ -1,5 +1,6 @@
 package com.matheus.receitasa.framework.di
 
+import com.matheus.core.data.network.interceptor.AuthorizationInterceptor
 import com.matheus.receitasa.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -33,25 +34,23 @@ object NetworkModule {
             )
         }
     }
-//
-//    @Provides
-//    fun provideAuthorizationInterceptor(): AuthorizationInterceptor {
-//        return AuthorizationInterceptor(
-//            publicKey = BuildConfig.PUBLIC_KEY,
-//            privateKey = BuildConfig.PRIVATE_KEY,
-//            calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
-//        )
-//    }
-//
+
+    @Provides
+    fun provideAuthorizationInterceptor(): AuthorizationInterceptor {
+        return AuthorizationInterceptor(
+            appId = BuildConfig.APP_ID,
+            appKey = BuildConfig.APP_KEY
+        )
+    }
+
     @Provides
     fun provideOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
-        //authorizationInterceptor: AuthorizationInterceptor
+        authorizationInterceptor: AuthorizationInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
-           // .addInterceptor(authorizationInterceptor)
-            //.addInterceptor(loggingInterceptor)
+            .addInterceptor(authorizationInterceptor)
             .readTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
             .connectTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
             .build()
