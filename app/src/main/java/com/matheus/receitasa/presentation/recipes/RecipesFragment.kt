@@ -5,16 +5,45 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.matheus.core.domain.model.Recipe
 import com.matheus.receitasa.R
+import com.matheus.receitasa.databinding.FragmentRecipesBinding
 
 class RecipesFragment : Fragment() {
+
+    private var _binding: FragmentRecipesBinding? = null
+    private val binding: FragmentRecipesBinding get() = _binding!!
+
+    private val recipesAdapter = RecipesAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipes, container, false)
+    ) = FragmentRecipesBinding.inflate(
+        inflater,
+        container,
+        false
+    ).apply {
+        _binding = this
+    }.root
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecipesAdapter()
+
+        recipesAdapter.submitList(
+            listOf(
+                Recipe("SSS", "sss", "dddd", "gfd")
+            )
+        )
+
+    }
+
+    private fun initRecipesAdapter() {
+        with(binding.recyclerRecipes) {
+            setHasFixedSize(true)
+
+        }
     }
 
 }

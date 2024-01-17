@@ -1,6 +1,6 @@
 package com.matheus.receitasa.framework.di
 
-import com.matheus.core.data.network.interceptor.AuthorizationInterceptor
+import com.matheus.receitasa.framework.network.interceptor.AuthorizationInterceptor
 import com.matheus.receitasa.BuildConfig
 import dagger.Module
 import dagger.Provides

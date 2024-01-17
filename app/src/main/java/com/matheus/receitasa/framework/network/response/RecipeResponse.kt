@@ -1,4 +1,4 @@
-package com.matheus.core.data.network.response
+package com.matheus.receitasa.framework.network.response
 
 data class RecipeResponse(
     val id: String,

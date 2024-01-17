@@ -1,6 +1,6 @@
-package com.matheus.core.data.network
+package com.matheus.receitasa.framework.network
 
-import com.matheus.core.data.network.response.DataWrapperResponse
+import com.matheus.receitasa.framework.network.response.DataWrapperResponse
 import retrofit2.http.GET
 import retrofit2.http.QueryMap
 
