@@ -1,12 +1,12 @@
 package com.matheus.receitasa.presentation.recipes
 
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.matheus.core.domain.model.Recipe
 
-class RecipesAdapter : ListAdapter
-<Recipe, RecipesViewHolder>(diffCallback) {
+class RecipesAdapter : PagingDataAdapter<Recipe, RecipesViewHolder>(diffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesViewHolder {
         return RecipesViewHolder.create(parent)
     }
