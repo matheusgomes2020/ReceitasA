@@ -6,6 +6,10 @@
     <string name="app_menu_ingredients">Ingredients</string>
     <string name="app_menu_favorites">Favorites</string>
 
+    <string name="common_try_again">Try again</string>
+    <string name="error_loading_recipes">Error when trying to load recipes</string>
+    <string name="error_loading_more_try_again">Error when trying to load the next page. Try again</string>
+
     <string name="recipes_screen_title">Recipes</string>
     <string name="ingredients_screen_title">Ingredients</string>
     <string name="favorites_screen_title">Favorites</string>

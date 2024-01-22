@@ -3,7 +3,7 @@ package com.matheus.receitasa.framework.network.response
 import com.matheus.core.domain.model.Recipe
 
 data class RecipeResponse(
-    val id: String,
+    val uri: String,
     val label: String,
     val image: String,
     val totalTime: Int

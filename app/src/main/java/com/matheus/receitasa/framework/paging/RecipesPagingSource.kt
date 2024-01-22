@@ -31,6 +31,7 @@ class RecipesPagingSource(
             val response = remoteDataSource.fetchRecipes(queries)
 
             val responseFrom = response.from
+            val responseTo = response.to
             val totalRecipes = response.count
 
             LoadResult.Page(
@@ -38,6 +39,7 @@ class RecipesPagingSource(
                 prevKey = null,
                 nextKey = if (responseFrom < totalRecipes) {
                     responseFrom + LIMIT
+                    responseTo + LIMIT
                 } else null
             )
 

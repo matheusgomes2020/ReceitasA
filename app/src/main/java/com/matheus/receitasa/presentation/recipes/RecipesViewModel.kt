@@ -1,5 +1,6 @@
 package com.matheus.receitasa.presentation.recipes
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingConfig

@@ -6,7 +6,7 @@ import retrofit2.http.QueryMap
 
 interface RecipesApi {
 
-    @GET("/search?")
+    @GET("/search")
     suspend fun getRecipes(
         @QueryMap
         queries: Map<String, String>

@@ -2,7 +2,6 @@ package com.matheus.receitasa.framework.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response
-import java.util.Calendar
 
 class AuthorizationInterceptor(
     private val appId: String,

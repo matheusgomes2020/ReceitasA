@@ -1,5 +1,6 @@
 package com.matheus.receitasa.presentation.recipes
 
+import android.util.Log
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -14,6 +15,8 @@ class RecipesAdapter : PagingDataAdapter<Recipe, RecipesViewHolder>(diffCallback
     override fun onBindViewHolder(holder: RecipesViewHolder, position: Int) {
         getItem( position )?.let {
             holder.bind( it )
+            Log.d("TATIRANDO?", "onViewCreated: $it}")
+
         }
     }
 

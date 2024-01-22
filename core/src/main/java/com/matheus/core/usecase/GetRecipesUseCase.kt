@@ -11,8 +11,7 @@ import javax.inject.Inject
 
 class GetRecipesUseCase @Inject constructor(
     private val recipesRepository: RecipesRepository
-) : PagingUseCase<GetRecipesUseCase.GetRecipesParams, Recipe>(
-) {
+) : PagingUseCase<GetRecipesUseCase.GetRecipesParams, Recipe>() {
 
     override fun createFlowObservable(params: GetRecipesParams): Flow<PagingData<Recipe>> {
         return Pager(config = params.pagingConfig) {
