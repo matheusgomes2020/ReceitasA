@@ -16,7 +16,7 @@ class RecipesPagingSource(
     @Suppress("TooGenericExceptionCaught")
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Recipe> {
         return try {
-            val from = params.key ?: 0
+            val from = params.key ?: 1
             val to = from + LIMIT
 
             val queries = hashMapOf(
@@ -31,15 +31,14 @@ class RecipesPagingSource(
             val response = remoteDataSource.fetchRecipes(queries)
 
             val responseFrom = response.from
-            val responseTo = response.to
             val totalRecipes = response.count
 
             LoadResult.Page(
                 data = response.hits.map { it.recipe.toRecipeModel() },
-                prevKey = null,
+                prevKey = responseFrom - LIMIT,
                 nextKey = if (responseFrom < totalRecipes) {
                     responseFrom + LIMIT
-                    responseTo + LIMIT
+                    //responseTo + LIMIT
                 } else null
             )
 
